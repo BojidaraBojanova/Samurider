@@ -1,0 +1,30 @@
+import { html } from "../../node_modules/lit-html/lit-html.js";
+import { dataService } from "../dataService.js";
+
+const dashboardTemp = (data)=> html`
+        <h2>Available Motorcycles</h2>
+        ${data.length > 0 ?
+            html`
+             <section id="dashboard">
+                    ${data.map(item => motorCard(item))};
+             </section>
+                `: html `<h2 class="no-avaliable">No avaliable motorcycles yet.</h2>`
+          }
+`;
+
+const motorCard = (item) => html`
+    <div class="motorcycle">
+        <img src=${item.imageUrl} alt="example1" />
+        <h3 class="model">${item.model}</h3>
+        <p class="year">Year: ${item.year}</p>
+        <p class="mileage">Mileage: ${item.mileage} km.</p>
+        <p class="contact">Contact Number: ${item.contact}</p>
+        <a class="details-btn" href="/details/${item._id}">More Info</a>
+    </div>
+`
+
+export async function showDashboardView(ctx){
+    const data  = await dataService.getAllMotors()
+    console.log(data);
+    ctx.render(dashboardTemp(data));
+}
