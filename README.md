@@ -21,8 +21,6 @@ Welcome to the Motorcycle Records Single Page Application (SPA) repository! This
 - [Appendices](#appendices)
    - [Using the Local REST Service](#using-the-local-rest-service)
    - [Running the Test Suite](#running-the-test-suite)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 The Motorcycle Records SPA is a fully functional Single Page Application (SPA) built using HTML, CSS, and JavaScript. It communicates with a local REST service to handle user authentication, motorcycle records CRUD operations, and additional functionalities.
@@ -33,7 +31,6 @@ The project scaffold includes a package.json file with common dependencies. The 
 **Resources:** The project resources, including the project scaffold and local REST service, are provided by [SoftUni](https://softuni.bg/).
 
 ## Application Requirements
-- Follow the specified requirements outlined in the SoftUni task.
 
 ### Navigation Bar
 - Implement a responsive NavBar with dynamic links based on user authentication status.
